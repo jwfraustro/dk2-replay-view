@@ -9,11 +9,15 @@ class ReplayViewerApp:
 
     def __init__(self, root):
         self.root = root
-        self.root.title("Replay File Viewer")
+        self.root.title("DK2 Replay File Viewer")
         self.root.geometry("600x400")
+        self.root.iconbitmap("./dk2_replay_view/data/dk2-icon.ico")  # Ensure the .ico file is in the same directory
 
         file_frame = tk.Frame(root)
         file_frame.pack(pady=10, padx=10, fill=tk.X)
+
+        self.file_label = tk.Label(file_frame, text="Replay File:")
+        self.file_label.pack(side=tk.LEFT)
 
         self.file_path_var = tk.StringVar()
         self.file_entry = tk.Entry(file_frame, textvariable=self.file_path_var, state="readonly", width=50)
