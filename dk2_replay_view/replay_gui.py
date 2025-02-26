@@ -10,8 +10,8 @@ class ReplayViewerApp:
 
     def __init__(self, root):
         self.root = root
-        self.root.title("DK2 Replay File Viewer")
-        self.root.geometry("600x400")
+        self.root.title("DK2 Replay Header Viewer")
+        self.root.geometry("500x450")
 
         icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "dk2-icon.ico"))
         self.root.iconbitmap(icon_path)

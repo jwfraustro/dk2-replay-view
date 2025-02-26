@@ -3,6 +3,7 @@ import struct
 
 class TimeRecorded:
     """Time the replay was recorded."""
+
     def __init__(self, data):
         self.year, self.month, self.day, self.hour, self.minute = struct.unpack("<HBBBB", data)
 
@@ -12,6 +13,7 @@ class TimeRecorded:
 
 class RandomMapSettings:
     """Random map settings data structure"""
+
     def __init__(self, data):
         (
             self.seed,
@@ -35,6 +37,7 @@ class RandomMapSettings:
 
 class ReplayHeader:
     """Game replay header data structure."""
+
     def __init__(self, data):
         self.gameVersion = struct.unpack_from("<I", data, 0x00)[0]
         self.version = struct.unpack_from("<B", data, 0x04)[0]
@@ -67,7 +70,7 @@ class ReplayHeader:
             f"gameVersion: {self.gameVersion}\n"
             f"version: {self.version}\n"
             f"numStars: {self.numStars}\n"
-            f"completedChallengers: {self.completedChallenges}\n"
+            f"completedChallenges: {self.completedChallenges}\n"
             f"availableChallenges: {self.availableChallenges}\n"
             f"scenarioType: {self.scenarioType}\n"
             f"playTime: {self.format_play_time()}\n"
