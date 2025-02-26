@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import filedialog, scrolledtext
 
@@ -11,7 +12,9 @@ class ReplayViewerApp:
         self.root = root
         self.root.title("DK2 Replay File Viewer")
         self.root.geometry("600x400")
-        self.root.iconbitmap("./dk2_replay_view/data/dk2-icon.ico")  # Ensure the .ico file is in the same directory
+
+        icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "dk2-icon.ico"))
+        self.root.iconbitmap(icon_path)
 
         file_frame = tk.Frame(root)
         file_frame.pack(pady=10, padx=10, fill=tk.X)
